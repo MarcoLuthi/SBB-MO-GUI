@@ -1,0 +1,19 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body {
+  color: #444;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+#app-container {
+  border: 1px solid #ccc;
+  height: 748px;
+  margin-top: -374px;
+  margin-left: -512px;
+  position: absolute; top: 50%; left: 50%;
+  width: 1024px;
+}

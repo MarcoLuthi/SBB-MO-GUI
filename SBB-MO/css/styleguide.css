@@ -1,0 +1,53 @@
+/* Styleguide for CSS components
+----------------------------------------------- */
+[data-component] {
+  border: 1px solid #ddd;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  clear: both;
+  margin: 60px;
+  padding: 30px;
+  position: relative;
+}
+
+[data-component]:before {
+  background: #eee;
+  -webkit-border-top-left-radius: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  -moz-border-radius-topleft: 5px;
+  -moz-border-radius-bottomright: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  color: #555;
+  content: attr(data-component);
+  display: inline-block;
+  opacity: 0.8;
+  padding: 3px 8px 4px 5px;
+  position: absolute; top: 0; left: 0;
+  text-shadow: 0px 1px 1px #fff;
+}
+
+[data-component]:hover:before {
+  display: none;
+}
+
+[data-component] > hr {
+  background: #ddd;
+  border: none;
+  height: 1px;
+  margin: 10px 0;
+  padding: 0;
+}
+
+.styleguide-title {
+  color: #09F;
+  font-size: 38px;
+  margin: 60px;
+}
+
+.styleguide-box {
+  border: 1px solid #ccc;
+  min-height: 50px;
+  min-width: 50px;
+}
