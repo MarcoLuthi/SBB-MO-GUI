@@ -18,7 +18,6 @@ body {
   width: 1024px;
 }
 
-<<<<<<< HEAD
 #header {
   position: static;
   display: block;
@@ -54,55 +53,3 @@ body {
   height: 90%;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-=======
-        .ui-widget,
-        .ui-widget input {
-            font-family: Arial, sans-serif;
-            font-size: 13px;
-        }
-
-        .ui-autocomplete {
-            text-align: left;
-        }
-
-        strong {
-            color: #d10505;
-        }
-        
-        .column {
-            float: right;
-        }
-        
-        .media {
-            padding-top: 30px;
-        }
-        
-        table {
-            border-collapse: collapse;
-            width: 100%;
-        }
-        
-        td, th {
-            padding: 8px;
-            line-height: 18px;
-            vertical-align: top;
-            border-bottom: 1px solid #DDD;
-        }
->>>>>>> Add Javascript and Syntax Parameters to app.css
