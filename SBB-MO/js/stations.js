@@ -32,7 +32,7 @@
                 $.get('http://transport.opendata.ch/v1/stationboard?station=Zurich&transportations[]=ec_ic&transportations[]=ice_tgv_rj&transportations[]=ir&transportations[]=s_sn_r', {}, function(data) {
                     $('#ulmain li').empty();
                     $(data.stationboard).each(function () {
-                        var prognosis, departure, delay, line = '<li>';
+                        var prognosis, departure, delay, line = '<li><span class="time">';
                         departure = moment(this.stop.departure);
                         if (this.stop.prognosis.departure) {
                             prognosis = moment(this.stop.prognosis.departure);
@@ -41,7 +41,7 @@
                         } else {
                             line += departure.format('HH:mm ');
                         }
-                        line += '<span>'+ this.name + ' </span><span> ' + this.to + ' </span></li>';
+                        line += '</span><span class="zug">'+ this.name + ' </span><span class="destination"> ' + this.to + ' </span></li>';
                         $('#ulmain').append(line);
                     });
                 }, 'json');
