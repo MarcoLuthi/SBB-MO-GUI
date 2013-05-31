@@ -23,6 +23,7 @@ h1 {
   width: 1024px;
   background-image:url(assets/background.png);
   background-repeat:repeat-x;
+  overflow: hidden;
 }
 
 #header {
@@ -53,6 +54,36 @@ h1 {
 
 }
 
+#rightmain {
+
+  overflow-y: scroll;
+  margin-left: 60%;
+  width: 40%;
+  height: 100%;
+}
+
+.rightanimation{
+   -webkit-transition: all 1.5s ease;
+
+}
+
+.rightanimation.hide{
+
+   -webkit-transform: translate3d(100%, 0, 0);
+
+}
+
+.leftanimation{
+   -webkit-transition: all 1.5s ease;
+
+}
+
+.leftanimation.hide{
+
+   -webkit-transform: translate3d(-100%, 0, 0);
+
+}
+
 .leftsub {
   position: relative;
   background: #fff;
@@ -67,6 +98,8 @@ h1 {
   padding-bottom: 22px;
   box-shadow: 3px 3px 5px 2px #3f3f3f;
 }
+
+
 
 .bgsearch {
   background: #F1F1F1;
@@ -145,7 +178,20 @@ h1 {
   padding-bottom: 10px;
   padding-top: 12px;
   margin-top: 10px;
+
+   -webkit-transition: all .4s;
+
 }
+
+#ulmain a {
+  color: #fff;
+  display: block;
+  padding: 20px;
+  margin-top: 10px;
+  text-decoration: none;
+
+}
+
 
 #ulmain li:first-child {
   margin-top: 350px;
@@ -190,6 +236,7 @@ strong{
 }
 
 
+<<<<<<< HEAD
 /*   Detailscreen Styles   */
 
 #footer {
@@ -227,4 +274,37 @@ strong{
   margin-top: 15%;
   margin-left: 20px;
   margin-right: 20px;
+=======
+.sprachauswahl{
+  position: absolute;
+ 
+  z-index: -1;
+  width:100%;
+  height:100%;
+  background: black;
+  opacity: 0;
+  -webkit-transition: all .4s;
+}
+
+.sprachauswahl.active{
+  opacity: 0.8;
+  z-index: 5000;
+}
+
+.tastatur{
+   position: absolute;
+ 
+  z-index: -1;
+  width:100%;
+  height:100%;
+  background: black;
+  opacity: 0;
+  -webkit-transition: all .4s;
+}
+
+
+.tastatur.active{
+  opacity: 0.8;
+  z-index: 5000;
+>>>>>>> c066cf8212d961eca49e46143d1974ac1bc63b5f
 }
