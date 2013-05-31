@@ -38,13 +38,11 @@
                 $.get('http://transport.opendata.ch/v1/stationboard?station=Zurich&limit=15&transportations[]=ec_ic&transportations[]=ice_tgv_rj&transportations[]=ir&transportations[]=s_sn_r', {}, function(data) {
                     $('#ulmain li').empty();
                     $(data.stationboard).each(function () {
-<<<<<<< HEAD
+
                         var prognosis, departure, delay, 
                         line = '<li><span class="gleis">3</span> <span class="destination">'+ this.to + ' </span><span class="zug"> ' + this.name + ' </span><span>';
                         line += '<span class="time">';
-=======
-                        var prognosis, departure, delay, line = '<li><a href="#test"><span class="time">';
->>>>>>> c066cf8212d961eca49e46143d1974ac1bc63b5f
+
                         departure = moment(this.stop.departure);
                         if (this.stop.prognosis.departure) {
                             prognosis = moment(this.stop.prognosis.departure);
@@ -53,11 +51,8 @@
                         } else {
                             line += departure.format('HH:mm </span></li>');
                         }
-<<<<<<< HEAD
-                        line+=
-=======
-                        line += '</span><span class="zug">'+ this.name + ' </span><span class="destination"> ' + this.to + ' </span></a></li>';
->>>>>>> c066cf8212d961eca49e46143d1974ac1bc63b5f
+
+
                         $('#ulmain').append(line);
                     });
                 }, 'json');
@@ -81,10 +76,10 @@
             }
         });*/
 
-<<<<<<< HEAD
-        // setInterval(refresh, 300000);Fuck that
-=======
->>>>>>> c066cf8212d961eca49e46143d1974ac1bc63b5f
+// <<<<<<< HEAD
+//         // setInterval(refresh, 300000);Fuck that
+// =======
+// >>>>>>> c066cf8212d961eca49e46143d1974ac1bc63b5f
         refresh();
     });
   
