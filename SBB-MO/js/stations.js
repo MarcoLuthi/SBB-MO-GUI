@@ -27,21 +27,25 @@
 
         var station = 'Zürich HB';
 
+
+//  Changed Syntax to dest. train and time
         function refresh() {
             if (station) {
                 $.get('http://transport.opendata.ch/v1/stationboard?station=Zurich&transportations[]=ec_ic&transportations[]=ice_tgv_rj&transportations[]=ir&transportations[]=s_sn_r', {}, function(data) {
                     $('#ulmain li').empty();
                     $(data.stationboard).each(function () {
-                        var prognosis, departure, delay, line = '<li><span class="time">';
+                        var prognosis, departure, delay, 
+                        line = '<li><span class="gleis">3</span> <span class="destination">'+ this.to + ' </span><span class="zug"> ' + this.name + ' </span><span>';
+                        line += '<span class="time">';
                         departure = moment(this.stop.departure);
                         if (this.stop.prognosis.departure) {
                             prognosis = moment(this.stop.prognosis.departure);
                             delay = (prognosis.valueOf() - departure.valueOf()) / 60000;
-                            line += departure.format('HH:mm ') + ' <strong>+' + delay + ' min </strong>';
+                            line += departure.format('HH:mm ') + ' <strong>+' + delay + ' min </strong></span></li>';
                         } else {
-                            line += departure.format('HH:mm ');
+                            line += departure.format('HH:mm </span></li>');
                         }
-                        line += '</span><span class="zug">'+ this.name + ' </span><span class="destination"> ' + this.to + ' </span></li>';
+                        line+=
                         $('#ulmain').append(line);
                     });
                 }, 'json');
@@ -65,6 +69,6 @@
             }
         });*/
 
-        setInterval(refresh, 300000);
+        // setInterval(refresh, 300000);Fuck that
         refresh();
     });
