@@ -40,7 +40,7 @@
                     $(data.stationboard).each(function () {
 
                         var prognosis, departure, delay, 
-                        line = '<li><span class="gleis">3</span> <span class="destination">'+ this.to + ' </span><span class="zug"> ' + this.name + ' </span><span>';
+                        line = '<li destination='+this.to+'><span class="gleis">3</span> <span class="destination">'+ this.to + ' </span><span class="zug"> ' + this.name + ' </span><span>';
                         line += '<span class="time">';
 
                         departure = moment(this.stop.departure);
@@ -55,6 +55,36 @@
 
                         $('#ulmain').append(line);
                     });
+
+                        $("#ulmain").each(function(){
+                        $(this).click(function(e){
+                        
+                        var destination=$(e.target).attr("destination");
+                        var currentElement=$(e.target);
+                        while(destination==undefined){
+                            currentElement=currentElement.parent()
+                            destination=currentElement.attr("destination");
+
+                            if(currentElement.id=="ulmain"){
+                                break;
+
+                                
+                            }
+
+                        }
+
+                        alert(destination);
+
+                        $(".leftanimation").toggleClass("hide") //toggleClass
+                        $(".rightanimation").toggleClass("hide") //toggleClass
+                        $(".fadein").toggleClass("active")
+                        $(".downdetailanimation").toggleClass("active")
+                        $(".leftdetailanimation").toggleClass("active")
+                        $(".rightdetailanimation").toggleClass("active")
+                    });
+                });
+
+
                 }, 'json');
             }
         }
@@ -109,14 +139,12 @@ $(document).ready(function() {
            $("#btnsuchen").on("click", function(e){
         $(".leftanimation").toggleClass("hide") //toggleClass
         $(".rightanimation").toggleClass("hide") //toggleClass
+        $(".fadein").toggleClass("active") //toggleClass
+        $(".leftdetailanimation").toggleClass("active")
+        $(".rightdetailanimation").toggleClass("active")
+        $(".downdetailanimation").toggleClass("active")
     });
 
-          $("#ulmain").each(function(){
-            $(this).click(function(e){
-                $(".leftanimation").toggleClass("hide") //toggleClass
-    $(".rightanimation").toggleClass("hide") //toggleClass
-            });
-    });
 });
 
 
