@@ -353,11 +353,52 @@ strong{
   z-index: 1;
 }
 
+.tabs{
+  box-shadow: 3px 3px 5px 2px #707070;
+  background: #566373;
+  color: #fff;
+  display: block;
+  padding: 20px;
+  padding-bottom: 10px;
+  padding-top: 12px;
+  margin-top: 10px;
+}
+
 .leftdetailsub {
   margin-top: 15%;
   margin-left: 20px;
   margin-right: 20px;
 }
+
+.radiobuttons{
+  margin-top: 10px;
+}
+
+.radioinput {
+  display: none;
+}
+
+.btnradio {
+  background: #E4E4E4;
+  border-radius: 5px;
+  color: #566373;
+  border: none;
+  padding: 7px;
+  padding-left: 15px;
+  font-size: 16pt;
+  font-weight: bold;
+  width: 100%;
+  margin-bottom: 5px;
+  display: block;
+} 
+
+input.radioinput:checked + .btnradio
+{
+  background: #f10000;
+  color: white;
+  display: block;
+}
+
 
 
 /*      Eingabescreens     */
@@ -418,7 +459,9 @@ strong{
 }
 
 
+
 .nach{
   font-size: 60px;
   color: white;
 }
+
