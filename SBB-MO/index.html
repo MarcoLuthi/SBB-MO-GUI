@@ -10,12 +10,14 @@
   <!-- Eigene Stile -->
   <link rel="stylesheet" href="css/app.css" media="all" type="text/css" />
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <script src="../SBB-MO/js/stations.js"></script>
     <script src="../SBB-MO/js/moment.min.js"></script>
 </head>
 <body onload="startTime()">
   <div id="app-container">
     <div class="tastatur">
+      <p class="nach" id="nachoutput"></p>
       <button id="zuruck2" class="btninput">Zurück</button>
       <div class="tastaturbild"></div>
     </div>
@@ -42,12 +44,12 @@
         <div class="bgsearch">
           <form>
             <div class="input-group">
-              <label class="label" for="from">Von:</label>
-              <input id="from" type="text" class="inputverbindung" value="Zürich HB">
+              <label class="label" for="fromhere">Von:</label>
+              <input id="fromhere" type="text" class="inputverbindung" value="Zürich HB">
             </div>
             <div class="input-group">
               <label class="label" for="to">Nach:  </label>
-              <input id="to" type="text" class="inputverbindung" value="Ort oder PLZ eingeben">
+              <input id="tohere" type="text" class="inputverbindung" value="Ort oder PLZ eingeben">
             </div>
         </form>
 
@@ -87,15 +89,15 @@
         <form>
               <div class="input-group">
                   <label class="label" for="from">Von:</label>
-                  <input id="from" type="text" class="inputverbindung">
+                  <input id="fromhere2" type="text" class="inputverbindung">
               </div>
               <div class="input-group">
                   <label class="label" for="to">Nach:</label>
-                  <input id="to" type="text" class="inputverbindung">
+                  <input id="tohere2" type="text" class="inputverbindung">
               </div>
               <div class="input-group">
                   <label class="label" for="via">Via:</label>
-                  <input id="via" type="text" class="inputverbindung">
+                  <input id="via" type="text" class="inputverbindung" value=>
               </div>
           </form>
           <h2>Vorgeschlagene Routen:</h2>

@@ -1,4 +1,7 @@
  
+    var fromhere;
+    var tohere;
+
     function startTime()
     {
         var today=new Date();
@@ -73,7 +76,11 @@
 
                         }
 
-                        alert(destination);
+                        
+                        $('#tohere2').val(destination);
+                        $('#fromhere2').val('Zürich HB');
+
+                        
 
                         $(".leftanimation").toggleClass("hide") //toggleClass
                         $(".rightanimation").toggleClass("hide") //toggleClass
@@ -115,11 +122,9 @@
   
 $(document).ready(function() {
 
-    $('#rightmain')
-        .css({"opacity":0})   // Set to 0 as soon as possible – may result in flicker, but it's not hidden for users with no JS (Googlebot for instance!)
-        .delay(4000)           // Wait for a bit so the user notices it fade in
-        .css({"opacity":1}
-        );
+
+
+
 
         $("#buttonSprache").on("click", function(e){
         $(".sprachauswahl").toggleClass("active") //toggleClass
@@ -130,22 +135,50 @@ $(document).ready(function() {
 
     });
 
-        $("#to").on("click", function(e){
-        $(".tastatur").toggleClass("active") //toggleClass
+        $("#fromhere").on("click", function(e){
+
+        $('#fromhere').val("");
     });
+
+        $("#tohere").on("click", function(e){
+        $(".tastatur").toggleClass("active") //toggleClass
+        $('#tohere').val("");
+    });
+
+
         $("#zuruck2").on("click", function(e){
         $(".tastatur").toggleClass("active") //toggleClass
     });
            $("#btnsuchen").on("click", function(e){
+
+            var fromhere = $("#fromhere").val();
+            var tohere=$("#tohere").val();
+
+            $("#fromhere2").val(fromhere);
+            $("#tohere2").val(tohere);
+
         $(".leftanimation").toggleClass("hide") //toggleClass
         $(".rightanimation").toggleClass("hide") //toggleClass
         $(".fadein").toggleClass("active") //toggleClass
         $(".leftdetailanimation").toggleClass("active")
         $(".rightdetailanimation").toggleClass("active")
         $(".downdetailanimation").toggleClass("active")
+
+
+
     });
 
+   
+        $("#tohere").keyup(function () {
+        var value = $(this).val();
+        $("p").text(value);
+        }).keyup();
+
+
+      
+
 });
+
 
 
 
