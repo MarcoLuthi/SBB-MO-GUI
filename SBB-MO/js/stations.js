@@ -81,12 +81,12 @@
                         $('#tohere2').val(destination);
                         $('#fromhere2').val('Zürich HB');
                         $('#via').val("Olten - Bern");
-                        var price= 38 + " CHF";
+                        var price= 38 + ".00 CHF";
                         $('#price').text(price);
                         $('#update').text("Zürich HB - "+ destination);
 
                         
-
+                        $(".tabs").addClass("active")
                         $(".leftanimation").toggleClass("hide") //toggleClass
                         $(".rightanimation").toggleClass("hide") //toggleClass
                         $(".fadein").toggleClass("active")
@@ -153,6 +153,10 @@ $(document).ready(function() {
 
 
         $("#tab1").on("click", function(e){
+
+        $(".tabs").addClass("active")
+        $(".tabs2").removeClass("active")
+        $(".tabs3").removeClass("active")
         $(".leftdetailanimation").addClass("active")
         $(".leftdetailanimation2").removeClass("active")
         $(".leftdetailanimation3").removeClass("active")
@@ -161,6 +165,9 @@ $(document).ready(function() {
     });
 
         $("#tab2").on("click", function(e){
+        $(".tabs").removeClass("active")
+        $(".tabs2").addClass("active")
+        $(".tabs3").removeClass("active")
         $(".leftdetailanimation").removeClass("active")
         $(".leftdetailanimation2").addClass("active")
         $(".leftdetailanimation3").removeClass("active")
@@ -169,6 +176,10 @@ $(document).ready(function() {
 
 
         $("#tab3").on("click", function(e){
+        $(".tabs").removeClass("active")
+        $(".tabs2").removeClass("active")
+        $(".tabs3").addClass("active")
+
         $(".leftdetailanimation").removeClass("active")
         $(".leftdetailanimation2").removeClass("active")
         $(".leftdetailanimation3").addClass("active")
@@ -178,7 +189,7 @@ $(document).ready(function() {
 
 
         $("#express").on("click", function(e){
-                        var price= 38.00 + " CHF";
+                        var price= 38.00 + ".00 CHF";
                         $('#price').text(price);
                         $('#via').val("Olten - Bern");
                         $('#viainfo').text("Olten - Bern");
@@ -186,7 +197,7 @@ $(document).ready(function() {
     });
 
          $("#tourismo").on("click", function(e){
-                        var price= 35.00 + " CHF";
+                        var price= 35 + ".00 CHF";
                         $('#price').text(price);
                         $('#via').val("Zermatt");
                         $('#viainfo').text("Zermatt");
@@ -194,7 +205,7 @@ $(document).ready(function() {
 
 
     $("#spar").on("click", function(e){
-                        var price= 22.00 + " CHF";
+                        var price= 22.00 + ".00 CHF";
                         $('#price').text(price);
                         $('#via').val("Aarau");
                         $('#viainfo').text("Aarau");
@@ -208,9 +219,14 @@ $(document).ready(function() {
         $(".leftanimation").toggleClass("hide") //toggleClass
         $(".rightanimation").toggleClass("hide") //toggleClass
         $(".fadein").toggleClass("active") //toggleClass
-        $(".leftdetailanimation").toggleClass("active")
+        $(".leftdetailanimation").removeClass("active")
+        $(".leftdetailanimation2").removeClass("active")
+        $(".leftdetailanimation3").removeClass("active")
         $(".rightdetailanimation").toggleClass("active")
         $(".downdetailanimation").toggleClass("active")
+        $(".tabs").removeClass("active")
+        $(".tabs2").removeClass("active")
+        $(".tabs3").removeClass("active")
     });
 
 
@@ -238,6 +254,7 @@ $(document).ready(function() {
         $(".leftdetailanimation").toggleClass("active")
         $(".rightdetailanimation").toggleClass("active")
         $(".downdetailanimation").toggleClass("active")
+        $(".tabs").addClass("active")
 
 
 

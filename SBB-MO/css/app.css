@@ -33,15 +33,17 @@ h1 {
   margin-top: -374px;
   margin-left: -512px;
   -webkit-transition: all 1.5s ease;
+  -webkit-transform: translate3d(0%, 0, 0);
 
 }
 .page2animation{
 -webkit-transition: all 1.5s ease;
+  -webkit-transform: translate3d(0%, 0, 0);
 }
 
 .fadein{
     -webkit-transition: all 1.5s ease;
-
+  -webkit-transform: translate3d(0%, 0, 0);
     z-index:-2;
 
 }
@@ -51,6 +53,7 @@ h1 {
 .fadein.active{
    z-index: 3;
     -webkit-transition-delay: 2s;
+     -webkit-transition: all 1.5s ease;
    -webkit-transform: translate3d(0%, 0, 0%);
     
 }
@@ -391,12 +394,34 @@ strong{
 
 .tabs {
 
-  -webkit-transition: all 1.5s ease;
+  -webkit-transition: all 0.5s ease;
 }
 
 .tabs.active{
-    -webkit-transition: all 1.5s ease;
-   -webkit-transform: translate3d(100%, 0, 0);
+    -webkit-transition: all 0.5s ease;
+   -webkit-transform: translate3d(-15%, 0, 0);
+   left: 100px;
+}
+
+.tabs2 {
+
+  -webkit-transition: all 0.5s ease;
+}
+
+.tabs2.active{
+    -webkit-transition: all 0.5s ease;
+   -webkit-transform: translate3d(-15%, 0, 0);
+   left: 100px;
+}
+
+.tabs3 {
+
+  -webkit-transition: all 0.5s ease;
+}
+
+.tabs3.active{
+    -webkit-transition: all 0.5s ease;
+   -webkit-transform: translate3d(-15%, 0, 0);
    left: 100px;
 }
 
