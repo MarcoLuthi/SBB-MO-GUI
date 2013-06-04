@@ -1,9 +1,21 @@
+
  
     var fromhere;
     var tohere;
-    var price;
+    var price=38;
     var gleis;
     var gleisinfo;
+    var klasse;
+    var weg;
+    var startingprice;
+    var classp=1;
+    var half;
+    var fullcount=1;
+    var halfcount=0;
+    var a=38;
+    var b=35;
+    var c=22;
+    var charge=0;
 
     function startTime()
     {
@@ -89,8 +101,13 @@
                         $('#fromhere2').val('Zürich HB');
                         $('#via').val("Olten - Bern");
                         var gleis=random = Math.ceil(Math.random() * 18);
-                        var price= 38 + ".00 CHF";
-                        $('#price').text(price);
+                        
+                        var weg="Nur Hinweg"
+                        var klasse="2. Klasse"
+                        $('#klasseinfo').text(klasse+" - "+fullcount+"x ganze - "+halfcount+"x halbe");
+                        $('#weg').text(weg);
+                        $('#price').text(price + ".00 CHF");
+                        
                         $('#gleisa').text(gleis);
                         $('#update').text("Zürich HB - "+ destination);
 
@@ -132,8 +149,9 @@
 // =======
 // >>>>>>> c066cf8212d961eca49e46143d1974ac1bc63b5f
         refresh();
-    });
-  
+    });  
+
+
 $(document).ready(function() {
 
 
@@ -177,6 +195,9 @@ $(document).ready(function() {
         $(".tabs").removeClass("active")
         $(".tabs2").addClass("active")
         $(".tabs3").removeClass("active")
+        startingprice=price;
+        klasse=1;
+        half=0;
         $(".leftdetailanimation").removeClass("active")
         $(".leftdetailanimation2").addClass("active")
         $(".leftdetailanimation3").removeClass("active")
@@ -196,26 +217,347 @@ $(document).ready(function() {
 
     });
 
+        $("#2klasse").on("click", function(e){
+            classp=1;    
+            klasse="2. Klasse"
+            
+            $('#price').text(price*classp +half+ charge+ ".00 CHF");
+            $('#klasseinfo').text(klasse+" - "+fullcount+"x ganze - "+halfcount+"x halbe");
+
+
+
+
+    });
+
+        $("#1klasse").on("click", function(e){
+            classp=2;               
+            klasse="1. Klasse"
+            $('#price').text(price*classp +half+ charge+ ".00 CHF");
+            $('#klasseinfo').text(klasse+" - "+fullcount+"x ganze - "+halfcount+"x halbe");
+
+
+
+
+    });
+
+        $("#hin").on("click", function(e){
+             charge=0;           
+            weg="Nur Hinweg"
+            $('#weg').text(weg);
+            $('#price').text(price*classp +half+ charge+ ".00 CHF");
+
+
+
+
+    });
+
+        $("#back").on("click", function(e){
+             charge=5;           
+            weg="Hin- und Rückweg"
+            $('#weg').text(weg);
+            $('#price').text(price +classp+half+ charge+ ".00 CHF");
+
+
+
+
+    });
+
+        $("#zero0").on("click", function(e){
+            halfcount=0;
+            $('#klasseinfo').text(klasse+" - "+fullcount+"x ganze - "+halfcount+"x halbe");
+            if (startingprice==38) {
+                half=a*classp*0;
+                $('#price').text(price +half+ charge+ ".00 CHF");
+            }
+            else if (startingprice==35) {
+                half=b*classp*0;
+                $('#price').text(price + half+ charge+ ".00 CHF");
+
+            }
+            else if (startingprice==22) {
+                half=c*classp*0;
+                $('#price').text(price +half+ charge+".00 CHF");
+
+            }
+    });
+        $("#one1").on("click", function(e){
+            halfcount=1;
+            $('#klasseinfo').text(klasse+" - "+fullcount+"x ganze - "+halfcount+"x halbe");
+            if (startingprice==38) {
+                half=a+charge*classp*0.5;
+                $('#price').text(price +half+ charge+".00 CHF");
+            }
+            else if (startingprice==35) {
+                half=b+charge*classp*0.5;
+                $('#price').text(price + half+ charge+".00 CHF");
+
+            }
+            else if (startingprice==22) {
+                half=c+charge*classp*0.5;
+                $('#price').text(price +half+ charge+".00 CHF");
+
+            }
+    });
+
+
+$("#two2").on("click", function(e){
+            halfcount=2;
+            $('#klasseinfo').text(klasse+" - "+fullcount+"x ganze - "+halfcount+"x halbe");
+            if (startingprice==38) {
+                half=a*2*classp*0.5;
+                $('#price').text(price +half+ charge+".00 CHF");
+            }
+            else if (startingprice==35) {
+                half=b*2*classp*0.5;
+                $('#price').text(price +half+charge+ ".00 CHF");
+
+            }
+            else if (startingprice==22) {
+                half=c*2*classp*0.5;
+                $('#price').text(price +half+charge+ ".00 CHF");
+
+            }
+    });
+
+$("#three3").on("click", function(e){
+halfcount=3;
+$('#klasseinfo').text(klasse+" - "+fullcount+"x ganze - "+halfcount+"x halbe");
+            if (startingprice==38) {
+                half=a*3*classp*0.5;
+                $('#price').text(price +half+charge+ ".00 CHF");
+            }
+            else if (startingprice==35) {
+                half=b*3*classp*0.5;
+                $('#price').text(price +half+ charge+".00 CHF");
+
+            }
+            else if (startingprice==22) {
+                half=c*3*classp*0.5;
+                $('#price').text(price +half+charge+".00 CHF");
+
+            }
+    });
+
+$("#four4").on("click", function(e){
+halfcount=4;
+$('#klasseinfo').text(klasse+" - "+fullcount+"x ganze - "+halfcount+"x halbe");
+            if (startingprice==38) {
+                half=a*4*classp*0.5;
+                $('#price').text(price + half+charge+".00 CHF");
+            }
+            else if (startingprice==35) {
+                half=b*4*classp*0.5;
+                $('#price').text(price + half+charge+".00 CHF");
+
+            }
+            else if (startingprice==22) {
+                half=c*4*classp*0.5;
+                $('#price').text(price +half+charge+ ".00 CHF");
+
+            }
+    });
+
+$("#five5").on("click", function(e){
+halfcount=5;
+$('#klasseinfo').text(klasse+" - "+fullcount+"x ganze - "+halfcount+"x halbe");
+            if (startingprice==38) {
+                half=a*5*classp*0.5;
+                $('#price').text(price +half+ charge+".00 CHF");
+            }
+            else if (startingprice==35) {
+                half=b*5*classp*0.5;
+                $('#price').text(price +half+charge+ ".00 CHF");
+
+            }
+            else if (startingprice==22) {
+                half=c*5*classp*0.5;
+                $('#price').text(price +half+ charge+".00 CHF");
+
+            }
+    });
+
+$("#six6").on("click", function(e){
+halfcount=6;
+$('#klasseinfo').text(klasse+" - "+fullcount+"x ganze - "+halfcount+"x halbe");
+            if (startingprice==38) {
+                half=a*6*classp*0.5;
+                $('#price').text(price +half+charge+ ".00 CHF");
+            }
+            else if (startingprice==35) {
+                half=b*6*classp*0.5;
+                $('#price').text(price +half+ charge+".00 CHF");
+
+            }
+            else if (startingprice==22) {
+                half=c*6*classp*0.5;
+                $('#price').text(price +half+ charge+".00 CHF");
+
+            }
+    });
+
+
+// THIS IS CRAZY AS BUTTONS
+       $("#zero").on("click", function(e){
+fullcount=0;
+$('#klasseinfo').text(klasse+" - "+fullcount+"x ganze - "+halfcount+"x halbe");
+            if (startingprice==38) {
+                price=a*classp*0;
+                $('#price').text(price +half+ charge+".00 CHF");
+            }
+            else if (startingprice==35) {
+                price=b*classp*0;
+                $('#price').text(price + half+charge+".00 CHF");
+
+            }
+            else if (startingprice==22) {
+                price=c*classp*0;
+                $('#price').text(price +half+charge+ ".00 CHF");
+
+            }
+    });
+
+
+        $("#one").on("click", function(e){
+fullcount=1;
+$('#klasseinfo').text(klasse+" - "+fullcount+"x ganze - "+halfcount+"x halbe");
+            if (startingprice==38) {
+                price=a*classp;
+                $('#price').text(price +half+charge+ ".00 CHF");
+            }
+            else if (startingprice==35) {
+                price=b*classp;
+                $('#price').text(price + half+charge+".00 CHF");
+
+            }
+            else if (startingprice==22) {
+                price=c*classp;
+                $('#price').text(price +half+ charge+".00 CHF");
+
+            }
+    });
+
+
+
+$("#two").on("click", function(e){
+fullcount=2;
+$('#klasseinfo').text(klasse+" - "+fullcount+"x ganze - "+halfcount+"x halbe");
+            if (startingprice==38) {
+                price=a*2*classp;
+                $('#price').text(price +half+ charge+".00 CHF");
+            }
+            else if (startingprice==35) {
+                price=b*2*classp;
+                $('#price').text(price +half+ charge+".00 CHF");
+
+            }
+            else if (startingprice==22) {
+                price=c*2*classp;
+                $('#price').text(price +half+ charge+".00 CHF");
+
+            }
+    });
+
+$("#three").on("click", function(e){
+fullcount=3;
+$('#klasseinfo').text(klasse+" - "+fullcount+"x ganze - "+halfcount+"x halbe");
+            if (startingprice==38) {
+                price=a*3*classp;
+                $('#price').text(price +half+charge+ ".00 CHF");
+            }
+            else if (startingprice==35) {
+                price=b*3*classp;
+                $('#price').text(price +half+charge+ ".00 CHF");
+
+            }
+            else if (startingprice==22) {
+                price=c*3*classp;
+                $('#price').text(price +half+charge+".00 CHF");
+
+            }
+    });
+
+$("#four").on("click", function(e){
+fullcount=4;
+$('#klasseinfo').text(klasse+" - "+fullcount+"x ganze - "+halfcount+"x halbe");
+            if (startingprice==38) {
+                price=a*4*classp;
+                $('#price').text(price + half+charge+".00 CHF");
+            }
+            else if (startingprice==35) {
+                price=b*4*classp;
+                $('#price').text(price + half+charge+".00 CHF");
+
+            }
+            else if (startingprice==22) {
+                price=c*4*classp;
+                $('#price').text(price +half+ charge+".00 CHF");
+
+            }
+    });
+
+$("#five").on("click", function(e){
+fullcount=5;
+$('#klasseinfo').text(klasse+" - "+fullcount+"x ganze - "+halfcount+"x halbe");
+            if (startingprice==38) {
+                price=a*5*classp;
+                $('#price').text(price +half+ charge+".00 CHF");
+            }
+            else if (startingprice==35) {
+                price=b*5*classp;
+                $('#price').text(price +half+charge+ ".00 CHF");
+
+            }
+            else if (startingprice==22) {
+                price=c*5*classp;
+                $('#price').text(price +half+charge+ ".00 CHF");
+
+            }
+    });
+
+$("#six").on("click", function(e){
+fullcount=6;
+$('#klasseinfo').text(klasse+" - "+fullcount+"x ganze - "+halfcount+"x halbe");
+            if (startingprice==38) {
+                price=a*6*classp;
+                $('#price').text(price +half+charge+ ".00 CHF");
+            }
+            else if (startingprice==35) {
+                price=b*6*classp;
+                $('#price').text(price +half+ charge+".00 CHF");
+
+            }
+            else if (startingprice==22) {
+                price=c*6*classp;
+                $('#price').text(price +half+ charge+".00 CHF");
+
+            }
+    });
+
+
+
+
+
+
 
         $("#express").on("click", function(e){
-                        var price= 38.00 + ".00 CHF";
-                        $('#price').text(price);
+                        price= 38.00;
+                        $('#price').text(price + ".00 CHF");
                         $('#via').val("Olten - Bern");
                         $('#viainfo').text("Olten - Bern");
 
     });
 
          $("#tourismo").on("click", function(e){
-                        var price= 35 + ".00 CHF";
-                        $('#price').text(price);
+                        price= 35;
+                        $('#price').text(price + ".00 CHF");
                         $('#via').val("Zermatt");
                         $('#viainfo').text("Zermatt");
     });
 
 
     $("#spar").on("click", function(e){
-                        var price= 22.00 + ".00 CHF";
-                        $('#price').text(price);
+                        price= 22.00;
+                        $('#price').text(price + ".00 CHF");
                         $('#via').val("Aarau");
                         $('#viainfo').text("Aarau");
     });
@@ -245,17 +587,22 @@ $(document).ready(function() {
     });
            $("#btnsuchen").on("click", function(e){
 
-            var fromhere = $("#fromhere").val();
-            var tohere=$("#tohere").val();
+            fromhere = $("#fromhere").val();
+             tohere=$("#tohere").val();
             $('#via').val("Olten - Bern");
+
+             klasse="2. Klasse"
+            $('#klasseinfo').text(klasse+" - "+fullcount+"x ganze - "+halfcount+"x halbe");
+             weg="Nur Hinweg"
+            $('#weg').text(weg);
 
             $("#fromhere2").val(fromhere);
             $("#tohere2").val(tohere);
             $('#price').text(price);
             $('#update').text(fromhere +" - "+tohere);
 
-            var price= 38.00 + ".00 CHF";
-            $('#price').text(price);
+             price= 38.00;
+            $('#price').text(price + ".00 CHF");
 
         $(".leftanimation").toggleClass("hide") //toggleClass
         $(".rightanimation").toggleClass("hide") //toggleClass
@@ -271,7 +618,7 @@ $(document).ready(function() {
 
    
         $("#tohere").keyup(function () {
-        var value = $(this).val();
+         value = $(this).val();
         $("p").text(value);
         }).keyup();
 

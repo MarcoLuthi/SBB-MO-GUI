@@ -2,6 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
+  <meta name="apple-mobile-web-app-capable" content="yes" />  
   <title>SBB 0.0.2 Alpha</title>
   <link rel="stylesheet" href="css/reset.css" media="all" type="text/css" />
   <link rel="stylesheet" href="css/grid.css" media="all" type="text/css" />
@@ -190,14 +191,14 @@
       <div class="optionensub">
       <h1>Optionen</h1>
 
-      <input id="1klasse" class="radioinput" type="radio" name="klasse">
-          <label for="1klasse" class="btnradio btnradioswitchleft">
-            1. Klasse
+      <input id="2klasse" class="radioinput" type="radio" name="klasse" checked>
+          <label for="2klasse" class="btnradio btnradioswitchleft">
+            2. Klasse
           </label>
 
-      <input id="2klasse" class="radioinput" type="radio" name="klasse" checked>
-          <label for="2klasse" class="btnradio btnradioswitchright">
-            2. Klasse
+      <input id="1klasse" class="radioinput" type="radio" name="klasse">
+          <label for="1klasse" class="btnradio btnradioswitchright">
+            1. Klasse
           </label>
 
 
@@ -215,6 +216,12 @@
       <div class="heading"><h2>Ganze Billette</h2></div>
 
       <div class="anzbillette">
+
+
+        <input id="zero" class="radioinput" type="radio" name="ganz" checked>
+          <label for="zero" class="btnradio btnradiomini">
+            0
+          </label>
 
         <input id="one" class="radioinput" type="radio" name="ganz" checked>
           <label for="one" class="btnradio btnradiomini">
@@ -253,7 +260,13 @@
 
       <div class="anzbillette">
 
-        <input id="one1" class="radioinput" type="radio" name="halb" checked>
+
+          <input id="zero0" class="radioinput" type="radio" name="halb" >
+          <label for="zero0" class="btnradio btnradiomini">
+            0
+          </label>
+
+        <input id="one1" class="radioinput" type="radio" name="halb" >
           <label for="one1" class="btnradio btnradiomini">
             1
           </label>
@@ -316,10 +329,10 @@
           <span class="gleis" id="gleisa"></span> <span id="update" class="vonnach">Zürich HB – St. Gallen</span><span id="viainfo" class="via">Via Olten – Bern</span>
         </div>
         <div class="tabs2"  id="tab2">
-          <span class="iconticket"></span> <span class="vonnach">Zürich HB – St. Gallen</span><span class="via">Via Olten – Bern</span>
+          <span class="iconticket"></span> <span id="weg" class="vonnach">Zürich HB – St. Gallen</span><span id="klasseinfo" class="via">Via Olten – Bern</span>
         </div>
         <div class="tabs3"  id="tab3">
-          <span class="icondatum"></span> <span class="vonnach">Zürich HB – St. Gallen</span><span class="via">Via Olten – Bern</span>
+          <span class="icondatum"></span> <span class="vonnach">Zürich HB – St. Gallen</span><span  class="via">Via Olten – Bern</span>
         </div>
         <div  id="bezahlen">
           <span id="price" class="preis"></span><span class="hint">Betrag einwerfen oder Karte einschieben</span>
