@@ -2,6 +2,8 @@
     var fromhere;
     var tohere;
     var price;
+    var gleis;
+    var gleisinfo;
 
     function startTime()
     {
@@ -38,13 +40,16 @@
 
 //  Changed Syntax to dest. train and time
         function refresh() {
+
             if (station) {
                 $.get('http://transport.opendata.ch/v1/stationboard?station=Zurich&limit=15&transportations[]=ec_ic&transportations[]=ice_tgv_rj&transportations[]=ir&transportations[]=s_sn_r', {}, function(data) {
                     $('#ulmain li').empty();
                     $(data.stationboard).each(function () {
+                        var gleis = random = Math.ceil(Math.random() * 18);
+                        var gleisinfo;
 
                         var prognosis, departure, delay, 
-                        line = '<li destination='+this.to+'><span class="gleis">3</span> <span class="destination">'+ this.to + ' </span><span class="zug"> ' + this.name + ' </span><span>';
+                        line = '<li destination='+this.to+' gleis='+gleis+' ><span class="gleis">'+gleis+'</span> <span class="destination">'+ this.to + ' </span><span class="zug"> ' + this.name + ' </span><span>';
                         line += '<span class="time">';
 
                         departure = moment(this.stop.departure);
@@ -62,6 +67,8 @@
 
                         $("#ulmain").each(function(){
                         $(this).click(function(e){
+
+                        var gleisinfo=$(e.target).attr("gleis");
                         
                         var destination=$(e.target).attr("destination");
                         var currentElement=$(e.target);
@@ -81,8 +88,10 @@
                         $('#tohere2').val(destination);
                         $('#fromhere2').val('Zürich HB');
                         $('#via').val("Olten - Bern");
+                        var gleis=random = Math.ceil(Math.random() * 18);
                         var price= 38 + ".00 CHF";
                         $('#price').text(price);
+                        $('#gleisa').text(gleis);
                         $('#update').text("Zürich HB - "+ destination);
 
                         
@@ -128,7 +137,7 @@
 $(document).ready(function() {
 
 
-
+    
 
 
         $("#buttonSprache").on("click", function(e){
@@ -245,7 +254,7 @@ $(document).ready(function() {
             $('#price').text(price);
             $('#update').text(fromhere +" - "+tohere);
 
-            var price= 22.00 + " CHF";
+            var price= 38.00 + ".00 CHF";
             $('#price').text(price);
 
         $(".leftanimation").toggleClass("hide") //toggleClass
