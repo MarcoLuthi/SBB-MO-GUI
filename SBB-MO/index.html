@@ -7,19 +7,35 @@
   <link rel="stylesheet" href="css/grid.css" media="all" type="text/css" />
   <link rel="stylesheet" href="css/spaces.css" media="all" type="text/css" />
   <link rel="stylesheet" href="css/styleguide.css" media="all" type="text/css" />
+  
+
   <!-- Eigene Stile -->
   <link rel="stylesheet" href="css/app.css" media="all" type="text/css" />
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <script src="../SBB-MO/js/stations.js"></script>
     <script src="../SBB-MO/js/moment.min.js"></script>
+
+  <meta charset="utf-8" />
+  <title>jQuery UI Datepicker - Display inline</title>
+
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
+  <script>
+  $(function() {
+    $( "#datepicker" ).datepicker();
+  });
+  </script>
+
 </head>
 <body onload="startTime()">
   <div id="app-container">
     
     <div class="tastatur">
       <div class="nach">Nach: </div><p class="nachinput" id="nachoutput"></p>
-      <button id="zuruck2" class="btninput">Zurück</button>
+      <button id="zuruck2" class="btninput">Bestätigen</button>
+      <button id="zuruck3" class="btninput">Abbrechen</button>
       <div class="tastaturbild"></div>
     </div>
 
@@ -55,7 +71,12 @@
       <button id="zuruck" class="btninput">Zurück</button>
 
     </div>
-   
+
+    <div class="bezahlenoverlay">
+      <div class="nach">bezahleeeen </div>
+      <button id="zuruck2" class="btninput">Zurück</button>
+      <div class="tastaturbild"></div>
+    </div>   
 
     <div id="header">
       <div id="timedisplay"></div>
@@ -136,7 +157,7 @@
                   <input id="via" type="text" class="inputverbindung" value=>
               </div>
           </form>
-          <h2>Vorgeschlagene Routen:</h2>
+          <br><h2>Vorgeschlagene Routen:</h2>
         </div>
 
         <div class="radiobuttons">
@@ -191,7 +212,7 @@
             Hin- und Rückweg
           </label>
 
-      <h2>Ganze Billette</h2>
+      <div class="heading"><h2>Ganze Billette</h2></div>
 
       <div class="anzbillette">
 
@@ -228,7 +249,7 @@
         </div>
 
 
-      <h2>Halbe Billette*</h2>
+      <div class="heading"><h2>Halbe Billette*</h2></div>
 
       <div class="anzbillette">
 
@@ -272,13 +293,20 @@
 
     </div>
     </div>
-    <div id="leftdetail" class="leftdetailanimation3">pay</div>
+    
+    <div id="leftdetail" class="leftdetailanimation3">
+      <div class="optionensub">
+      <h1>Datum</h1><div id="datepicker"></div>
+      <h3>Die Gültigkeit der Billette beschränkt sich auf das gewählte Datum. Danach muss ein neues Billett gelost werden.</h3>
+      </div>
+    </div>
 
 
     
      <!-- Ende -->
 
-   
+    user
+
 
 
     <div id="rightdetail" class="rightdetailanimation">

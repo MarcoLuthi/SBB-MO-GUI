@@ -67,11 +67,11 @@ h3 {
 #header {
   position: absolute;
   display: block;
-  background: #fff;
+  background: #F8F8F8;
   z-index: 6000;
   width:100%;
   height: 10%;
-  box-shadow: 0px 3px 5px 2px #3f3f3f;
+  box-shadow: 0px 3px 5px 2px #5e5e5e;
   background-image:url(assets/logo.png);
   background-repeat:no-repeat;
   background-position: left center;
@@ -304,10 +304,10 @@ strong{
 /*   Detailscreen Styles   */
 
 #footer {
-  background: #fff;
+  background: #F8F8F8;
   width:100%;
   height: 90px;
-  box-shadow: 0px -1px 5px 2px #566373;
+  box-shadow: 0px -1px 5px 2px #5e5e5e;
   z-index: 70000;
   position: absolute;
   bottom: 0px;
@@ -326,7 +326,7 @@ strong{
 
 #leftdetail {
   background: #fff;
-  box-shadow: 1px 0px 5px 2px #566373;
+  box-shadow: 1px 0px 5px 2px #5e5e5e;
   float: left;
   width: 55%;
   height: 100%;
@@ -435,7 +435,7 @@ strong{
 
 #tab1{
 
- position: absolute; top:110px;left:5%;
+ position: absolute; top:80px;left:5%;
   box-shadow: 3px 3px 5px 2px #707070;
   background: #566373;
   color: #fff;
@@ -447,7 +447,7 @@ strong{
 }
 
 #tab2{
- position: absolute; top:240px;left:5%;
+ position: absolute; top:200px;left:5%;
   box-shadow: 3px 3px 5px 2px #707070;
   background: #566373;
   color: #fff;
@@ -459,7 +459,7 @@ strong{
 }
 
 #tab3{
- position: absolute; top:370px;left:5%;
+ position: absolute; top:320px;left:5%;
   box-shadow: 3px 3px 5px 2px #707070;
   background: #566373;
   color: #fff;
@@ -471,7 +471,7 @@ strong{
 }
 
 #bezahlen {
-   position: absolute; left:5%;
+  position: absolute; left:5%;
   box-shadow: 3px 3px 5px 2px #707070;
   background: #566373;
   color: #fff;
@@ -480,11 +480,11 @@ strong{
   padding-top: 12px;
   width: 90%;
   height: 150px;
-top: 500px;
+  top: 440px;
 }
 
 .preis {
-  font-size: 30pt;
+  font-size: 34pt;
   font-weight: normal;
   margin-left: 70px;
   width: 100%;
@@ -564,6 +564,18 @@ top: 500px;
   display: block;
 } 
 
+#expressprice {
+  float: right;
+}
+
+#tourismoprice {
+  float: right;
+}
+
+#sparprice {
+  float: right;
+}
+
 .btnradiomini {
   width: 11%;
   float: left;
@@ -605,6 +617,10 @@ input.radioinput:checked + .btnradio
   width: 80%;
 }
 
+.heading{
+
+}
+
 .anzbillette {
   display: block;
   height: 60px;
@@ -630,6 +646,23 @@ input.radioinput:checked + .btnradio
   z-index: 9000;
 }
 
+.bezahlenoverlay{
+  position: absolute;
+ 
+  z-index: -1;
+  width:100%;
+  height:100%;
+  background: black;
+  opacity: 0;
+  -webkit-transition: all .4s;
+}
+
+.bezahlenoverlay.active{
+  opacity: 0.9;
+  z-index: 9000;
+
+}
+
 .tastatur{
   position: absolute;
  
@@ -650,12 +683,14 @@ input.radioinput:checked + .btnradio
 
 .tastaturbild {
   background-image:url(assets/tastatur.png);
+  background-size: 90%;
   background-repeat:no-repeat;
   width: 100%;
   height: 40%;
   position: absolute;
   margin-top: 45%;
   display: block;
+  margin-left: 5%;
 }
 
 .btninput {
@@ -677,6 +712,11 @@ input.radioinput:checked + .btnradio
   position: absolute;
   top: 85%;
   left: 70%;
+}
+#zuruck3 {
+  position: absolute;
+  top: 85%;
+  left: 7%;
 }
 
 #zuruck {
@@ -715,3 +755,56 @@ input.radioinput:checked + .btninput
   margin-left: 7%;
   font-weight: bold;
 }
+
+
+
+
+
+/*        Kalender    */
+
+
+.ui-datepicker-inline {
+  width: 100%;
+  height: 100%;
+}
+
+.ui-state-default {
+  background: #E4E4E4;
+  display: block;
+  padding: 10px;
+  padding-left: 17px;
+  padding-right: 17px;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  text-align: center;
+  color: black;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.ui-state-highlight {
+  background: #003399;
+  color: white;
+}
+
+.ui-state-active {
+  background: #f10000;
+  color: white;
+}
+
+.ui-datepicker-prev{
+  float: left;
+  text-decoration: underline;
+}
+
+.ui-datepicker-next {
+  float: right;
+  text-decoration: underline;
+}
+
+.ui-datepicker-title {
+  display: block;
+  text-align: center;
+}
+
