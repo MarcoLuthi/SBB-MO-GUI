@@ -151,6 +151,32 @@ $(document).ready(function() {
     });
 
 
+
+        $("#tab1").on("click", function(e){
+        $(".leftdetailanimation").addClass("active")
+        $(".leftdetailanimation2").removeClass("active")
+        $(".leftdetailanimation3").removeClass("active")
+
+
+    });
+
+        $("#tab2").on("click", function(e){
+        $(".leftdetailanimation").removeClass("active")
+        $(".leftdetailanimation2").addClass("active")
+        $(".leftdetailanimation3").removeClass("active")
+
+    });
+
+
+        $("#tab3").on("click", function(e){
+        $(".leftdetailanimation").removeClass("active")
+        $(".leftdetailanimation2").removeClass("active")
+        $(".leftdetailanimation3").addClass("active")
+
+
+    });
+
+
         $("#express").on("click", function(e){
                         var price= 38.00 + " CHF";
                         $('#price').text(price);
