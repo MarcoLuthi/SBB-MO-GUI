@@ -16,13 +16,42 @@
 </head>
 <body onload="startTime()">
   <div id="app-container">
+    
     <div class="tastatur">
-      <p class="nach" id="nachoutput"></p>
+      <div class="nach">Nach: </div><p class="nachinput" id="nachoutput"></p>
       <button id="zuruck2" class="btninput">Zurück</button>
       <div class="tastaturbild"></div>
     </div>
 
     <div class="sprachauswahl">
+      <div class="radiobuttons">
+          <div class="nach">Sprache:</div>
+          
+          <div class="radiosprache">
+          <input id="deutsch" class="radioinput" type="radio" name="sprache" checked>
+          <label for="deutsch" class="btninputradio">
+            Deutsch
+          </label>
+            
+          <input id="englisch" class="radioinput" type="radio" name="sprache">
+          <label for="englisch" class="btninputradio">
+            English
+          </label>
+
+          <input id="franz" class="radioinput" type="radio" name="sprache">
+          <label for="franz" class="btninputradio">
+            Français
+          </label>
+
+          <input id="ital" class="radioinput" type="radio" name="sprache">
+          <label for="ital" class="btninputradio">
+            Italiano
+          </label>
+          </div>
+
+
+          </div>
+
       <button id="zuruck" class="btninput">Zurück</button>
 
     </div>
