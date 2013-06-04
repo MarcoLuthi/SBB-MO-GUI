@@ -1,6 +1,7 @@
  
     var fromhere;
     var tohere;
+    var price;
 
     function startTime()
     {
@@ -79,6 +80,10 @@
                         
                         $('#tohere2').val(destination);
                         $('#fromhere2').val('Zürich HB');
+                        $('#via').val("Olten - Bern");
+                        var price= 38 + " CHF";
+                        $('#price').text(price);
+                        $('#update').text("Zürich HB - "+ destination);
 
                         
 
@@ -146,6 +151,44 @@ $(document).ready(function() {
     });
 
 
+        $("#express").on("click", function(e){
+                        var price= 38.00 + " CHF";
+                        $('#price').text(price);
+                        $('#via').val("Olten - Bern");
+                        $('#viainfo').text("Olten - Bern");
+
+    });
+
+         $("#tourismo").on("click", function(e){
+                        var price= 35.00 + " CHF";
+                        $('#price').text(price);
+                        $('#via').val("Zermatt");
+                        $('#viainfo').text("Zermatt");
+    });
+
+
+    $("#spar").on("click", function(e){
+                        var price= 22.00 + " CHF";
+                        $('#price').text(price);
+                        $('#via').val("Aarau");
+                        $('#viainfo').text("Aarau");
+    });
+
+
+
+
+
+        $("#btnabbrechen").on("click", function(e){
+        $(".leftanimation").toggleClass("hide") //toggleClass
+        $(".rightanimation").toggleClass("hide") //toggleClass
+        $(".fadein").toggleClass("active") //toggleClass
+        $(".leftdetailanimation").toggleClass("active")
+        $(".rightdetailanimation").toggleClass("active")
+        $(".downdetailanimation").toggleClass("active")
+    });
+
+
+
         $("#zuruck2").on("click", function(e){
         $(".tastatur").toggleClass("active") //toggleClass
     });
@@ -153,9 +196,15 @@ $(document).ready(function() {
 
             var fromhere = $("#fromhere").val();
             var tohere=$("#tohere").val();
+            $('#via').val("Olten - Bern");
 
             $("#fromhere2").val(fromhere);
             $("#tohere2").val(tohere);
+            $('#price').text(price);
+            $('#update').text(fromhere +" - "+tohere);
+
+            var price= 22.00 + " CHF";
+            $('#price').text(price);
 
         $(".leftanimation").toggleClass("hide") //toggleClass
         $(".rightanimation").toggleClass("hide") //toggleClass
@@ -175,9 +224,12 @@ $(document).ready(function() {
         }).keyup();
 
 
+        
+    });
+
+
       
 
-});
 
 
 

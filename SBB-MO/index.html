@@ -81,7 +81,11 @@
     </div>
     <!-- Ende -->
     <div id="page2" class="fadein">
+      <div id="leftdetail3" class="leftdetailanimation"></div>
+      <div id="leftdetail2" class="leftdetailanimation"></div>
         <div id="leftdetail" class="leftdetailanimation">
+
+
       <div class="leftdetailsub">
         <h1>Verbindung</h1>
         
@@ -106,17 +110,17 @@
           <div class="radiobuttons">
           <input id="express" class="radioinput" type="radio" name="via" checked>
           <label for="express" class="btnradio">
-            Express – Via Olten     35.00 CHF*
+            <span id="expressort">Express – Via Olten </span><span id="expressprice">38.00 CHF*</span> 
           </label>
             
           <input id="tourismo" class="radioinput" type="radio" name="via">
           <label for="tourismo" class="btnradio">
-            Tourismo – Via Zermatt  59.00 CHF*
+            Tourismo – Via Zermatt  <span id="tourismoprice">35.00 CHF*</span> 
           </label>
 
           <input id="spar" class="radioinput" type="radio" name="via">
           <label for="spar" class="btnradio">
-            Spar – Via Aarau  30.00 CHF*
+            Spar – Via Aarau  <span id="sparprice">22.00 CHF*</span> 
           </label>
           </div>
 
@@ -128,7 +132,7 @@
 
     <div id="rightdetail" class="rightdetailanimation">
         <div class="tabs" id="tab1">
-          <span class="gleis">3</span> <span class="vonnach">Zürich HB – St. Gallen</span><span class="via">Via Olten – Bern</span>
+          <span class="gleis">3</span> <span id="update" class="vonnach">Zürich HB – St. Gallen</span><span id="viainfo" class="via">Via Olten – Bern</span>
         </div>
         <div class="tabs" id="tab2">
           <span class="iconticket"></span> <span class="vonnach">Zürich HB – St. Gallen</span><span class="via">Via Olten – Bern</span>
@@ -137,7 +141,7 @@
           <span class="icondatum"></span> <span class="vonnach">Zürich HB – St. Gallen</span><span class="via">Via Olten – Bern</span>
         </div>
         <div class="tabs" id="bezahlen">
-          <span class="preis">38.00 CHF</span><span class="hint">Betrag einwerfen oder Karte einschieben</span>
+          <span id="price" class="preis"></span><span class="hint">Betrag einwerfen oder Karte einschieben</span>
         </div>
     </div>
     <!-- Ende -->
