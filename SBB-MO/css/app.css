@@ -539,6 +539,7 @@ top: 500px;
 
 .radioinput {
   display: none;
+
 }
 
 .btnradio {
@@ -559,7 +560,7 @@ input.radioinput:checked + .btnradio
 {
   background: #f10000;
   color: white;
-  display: block;
+/*  display: block;*/
 }
 
 
@@ -607,13 +608,12 @@ input.radioinput:checked + .btnradio
   width: 100%;
   height: 40%;
   position: absolute;
-  margin-top: -50%;
+  margin-top: 45%;
   display: block;
 }
 
 .btninput {
   border: 3px solid #fff;
-  width: 20%;
   border-radius: 10px;
   color: #fff;
   background: none;
@@ -621,16 +621,22 @@ input.radioinput:checked + .btnradio
   font-size: 16pt;
   font-weight: bold;
   margin-right: 10px;
+  width: 200px;
+  display: block;
+  float: left;
+  text-align: center;
 }
 
 #zuruck2 {
-  margin-top: 60%;
-  margin-left: 70%;
+  position: absolute;
+  top: 85%;
+  left: 70%;
 }
 
 #zuruck {
-  margin-top: 20%;
-  margin-left: 70%;
+  position: absolute;
+  top: 85%;
+  left: 70%;
 }
 
 
