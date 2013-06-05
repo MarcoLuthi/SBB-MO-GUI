@@ -607,6 +607,7 @@ $('#klasseinfo').text(klasse+" - "+fullcount+"x ganze - "+halfcount+"x halbe");
         $(".tabs").removeClass("active")
         $(".tabs2").removeClass("active")
         $(".tabs3").removeClass("active")
+        $(".tabs4").removeClass("active")
         setTimeout(function(){    
         $(".leftanimation").toggleClass("hide") //toggleClass
         $(".rightanimation").toggleClass("hide") //toggleClass

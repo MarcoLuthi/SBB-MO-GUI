@@ -28,7 +28,11 @@
 </head>
 <body onload="startTime()">
   <div id="app-container">
-    <div class="payment"></div>
+
+    <div class="payment">
+      <div class="nach">Preis: <span id="price2" class="preis"></span></div>
+    </div>
+
     <div class="tastatur">
       <div class="nach">Nach: </div><p class="nachinput" id="nachoutput"></p>
       <button id="zuruck2" class="btninput">Bestätigen</button>
@@ -321,6 +325,37 @@
 
         <div id="leftdetail" class="leftdetailanimation4">
       <div class="optionensub">
+        <h1>Velobillett<br><br></h1>
+
+        <input id="velovoll" class="radioinput" type="radio" name="velo" checked>
+          <label for="velovoll" class="btnradio">
+            Velo Tageskarte Vollpreis
+          </label>
+
+          <input id="velohalb" class="radioinput" type="radio" name="velo">
+          <label for="velohalb" class="btnradio">
+            Velo Tageskarte ermässigter Preis*
+          </label>
+
+        <h3>
+          * mit Halbtax-Abonnement <br>
+          * mit Generalabonnement <br>
+          * Kinder bis 16<br>
+          * Kurzstrecken<br>
+        </h3>
+
+        <h3> 
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>RESERVIERUNGSPHLICHT vom 21. März bis 31. Oktober in allen Intercity-Neigezügen (ICN). Gratis-Velomitnahme für Kinder mit Junior-/ Enkelkarte.</h3>
 
       </div>
     </div>
@@ -332,16 +367,16 @@
   <div id="rightdetail2" class="rightdetailanimation2"> 
 
         <div class="tabs4"  id="tab4">
-VELO
+           <span class="iconticket"></span> <span id="weg" class="vonnach">Velo-Tageskarte Vollpreis</span>
         </div>
 
         <div class="tabs5"  id="tab5">
-Datum
+            <span class="icondatum"></span> <span class="vonnach">Gültig am: </span><span id="date" class="via">05.06.2013</span>
         </div>
 
 
-<div  id="bezahlen2">
-          <span id="price2" class="preis"></span><span class="hint">Betrag einwerfen oder Karte einschieben</span>
+        <div  id="bezahlen2">
+          <span id="price2" class="preis">12.00 CHF</span></span><span class="hint">Betrag einwerfen oder Karte einschieben</span>
         </div>
 
 
