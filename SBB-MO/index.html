@@ -20,12 +20,16 @@
   <meta charset="utf-8" />
   <title>jQuery UI Datepicker - Display inline</title>
 
-  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
   <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 
   <script>
   $(function() {
-    $( "#datepicker" ).datepicker();
+    $( "#datepicker" ).datepicker({
+      onSelect: function(date, evt) {
+        // do something with date
+      },
+      dateFormat: 'dd.mm.yy'
+    });
   });
   </script>
 
@@ -310,7 +314,7 @@
     <div id="leftdetail" class="leftdetailanimation3">
       <div class="optionensub">
       <h1>Datum</h1><div id="datepicker"></div>
-      <h3>Die Gültigkeit der Billette beschränkt sich auf das gewählte Datum. Danach muss ein neues Billett gelost werden.</h3>
+      <h3>Die Gültigkeit der Billette beschränkt sich auf das gewählte Datum. Danach muss ein neues Billett gelöst werden.</h3>
       </div>
     </div>
 
@@ -332,7 +336,7 @@
           <span class="iconticket"></span> <span id="weg" class="vonnach">Zürich HB – St. Gallen</span><span id="klasseinfo" class="via">Via Olten – Bern</span>
         </div>
         <div class="tabs3"  id="tab3">
-          <span class="icondatum"></span> <span class="vonnach">Zürich HB – St. Gallen</span><span  class="via">Via Olten – Bern</span>
+          <span class="icondatum"></span> <span class="vonnach">Gültig am: </span><span id="date" class="via">23.4.2013</span>
         </div>
         <div  id="bezahlen">
           <span id="price" class="preis"></span><span class="hint">Betrag einwerfen oder Karte einschieben</span>
