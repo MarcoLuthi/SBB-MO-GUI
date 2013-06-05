@@ -623,6 +623,7 @@ $('#klasseinfo').text(klasse+" - "+fullcount+"x ganze - "+halfcount+"x halbe");
         $("#zuruck2").on("click", function(e){
         $(".tastatur").toggleClass("active") //toggleClass
 
+
                     fromhere = $("#fromhere").val();
              tohere=$("#tohere").val();
             $('#via').val("Olten - Bern");
@@ -641,6 +642,7 @@ $('#klasseinfo').text(klasse+" - "+fullcount+"x ganze - "+halfcount+"x halbe");
 
              price= 38.00;
             $('#price').text(price + ".00 CHF");
+
 
         $(".leftanimation").toggleClass("hide") //toggleClass
         $(".rightanimation").toggleClass("hide") //toggleClass
