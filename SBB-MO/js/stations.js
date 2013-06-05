@@ -16,6 +16,14 @@
     var b=35;
     var c=22;
     var charge=0;
+    var now;
+
+
+
+function getDate()
+{
+
+}
 
     function startTime()
     {
@@ -23,11 +31,14 @@
         var h=today.getHours();
         var m=today.getMinutes();
         var s=today.getSeconds();
+
+        
         // add a zero in front of numbers<10
         m=checkTime(m);
         s=checkTime(s);
         document.getElementById('timedisplay').innerHTML=h+":"+m+":"+s;
         t=setTimeout(function(){startTime()},500);
+        
         
 
 
@@ -81,6 +92,7 @@
                         $(this).click(function(e){
 
                         var gleisinfo=$(e.target).attr("gleis");
+
                         
                         var destination=$(e.target).attr("destination");
                         var currentElement=$(e.target);
@@ -100,6 +112,8 @@
                         $('#tohere2').val(destination);
                         $('#fromhere2').val('Zürich HB');
                         $('#via').val("Olten - Bern");
+
+
                         var gleis=random = Math.ceil(Math.random() * 18);
                         
                         var weg="Nur Hinweg"
@@ -158,6 +172,7 @@ $(document).ready(function() {
     
 
 
+
         $("#buttonSprache").on("click", function(e){
         $(".sprachauswahl").toggleClass("active") //toggleClass
     });
@@ -165,6 +180,11 @@ $(document).ready(function() {
         $("#zuruck").on("click", function(e){
         $(".sprachauswahl").toggleClass("active") //toggleClass
 
+    });
+
+    $("#ulmain").on("click", function(e){
+
+        now = moment().format('L');
     });
 
         $("#fromhere").on("click", function(e){
@@ -206,6 +226,7 @@ $(document).ready(function() {
 
 
         $("#tab3").on("click", function(e){
+
         $(".tabs").removeClass("active")
         $(".tabs2").removeClass("active")
         $(".tabs3").addClass("active")
@@ -567,8 +588,8 @@ $('#klasseinfo').text(klasse+" - "+fullcount+"x ganze - "+halfcount+"x halbe");
 
 
         $("#btnabbrechen").on("click", function(e){
-        $(".leftanimation").toggleClass("hide") //toggleClass
-        $(".rightanimation").toggleClass("hide") //toggleClass
+
+
         $(".fadein").toggleClass("active") //toggleClass
         $(".leftdetailanimation").removeClass("active")
         $(".leftdetailanimation2").removeClass("active")
@@ -578,6 +599,11 @@ $('#klasseinfo').text(klasse+" - "+fullcount+"x ganze - "+halfcount+"x halbe");
         $(".tabs").removeClass("active")
         $(".tabs2").removeClass("active")
         $(".tabs3").removeClass("active")
+        setTimeout(function(){    
+        $(".leftanimation").toggleClass("hide") //toggleClass
+        $(".rightanimation").toggleClass("hide") //toggleClass
+           }, 800);
+
     });
 
 
@@ -586,10 +612,12 @@ $('#klasseinfo').text(klasse+" - "+fullcount+"x ganze - "+halfcount+"x halbe");
         $(".tastatur").toggleClass("active") //toggleClass
     });
            $("#btnsuchen").on("click", function(e){
-
+            
             fromhere = $("#fromhere").val();
              tohere=$("#tohere").val();
             $('#via').val("Olten - Bern");
+          now = moment().format('L');
+            $('#date').text(now);
 
              klasse="2. Klasse"
             $('#klasseinfo').text(klasse+" - "+fullcount+"x ganze - "+halfcount+"x halbe");
@@ -627,7 +655,14 @@ $('#klasseinfo').text(klasse+" - "+fullcount+"x ganze - "+halfcount+"x halbe");
     });
 
 
-      
+       $(function() {
+    $( "#datepicker" ).datepicker({
+      onSelect: function(date, evt) {
+        $('#date').text(date);
+      },
+      dateFormat: 'dd.mm.yy'
+    });
+  });
 
 
 
