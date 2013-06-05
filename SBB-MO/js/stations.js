@@ -591,6 +591,7 @@ $('#klasseinfo').text(klasse+" - "+fullcount+"x ganze - "+halfcount+"x halbe");
    $("#bezahlen").on("click", function(e){
         $(".payment").toggleClass("active")
         $('#price2').text(price + ".00 CHF")
+        $('#price3').text(price + ".00 CHF")
     });
 
 
