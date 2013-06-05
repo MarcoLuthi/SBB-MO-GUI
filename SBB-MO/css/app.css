@@ -854,6 +854,20 @@ input.radioinput:checked + .btnradio
   left: 7%;
 }
 
+}
+#zuruck4 {
+  position: absolute;
+  top: 85%;
+  left: 7%;
+}
+#zuruck5 {
+  position: absolute;
+  top: 85%;
+  left: 7%;
+}
+
+
+
 #zuruck {
   position: absolute;
   top: 85%;

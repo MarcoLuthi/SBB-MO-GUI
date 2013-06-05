@@ -6,7 +6,8 @@
     var gleis;
     var gleisinfo;
     var klasse;
-    var weg;
+    var weg="Nur Hinweg";
+
     var startingprice;
     var classp=1;
     var half;
@@ -17,6 +18,7 @@
     var c=22;
     var charge=0;
     var now;
+    var price2;
 
 
 
@@ -116,8 +118,8 @@ function getDate()
 
                         var gleis=random = Math.ceil(Math.random() * 18);
                         
-                        var weg="Nur Hinweg"
-                        var klasse="2. Klasse"
+                        weg="Nur Hinweg"
+                        klasse="2. Klasse"
                         $('#klasseinfo').text(klasse+" - "+fullcount+"x ganze - "+halfcount+"x halbe");
                         $('#weg').text(weg);
                         $('#price').text(price + ".00 CHF");
@@ -588,9 +590,14 @@ $('#klasseinfo').text(klasse+" - "+fullcount+"x ganze - "+halfcount+"x halbe");
 
    $("#bezahlen").on("click", function(e){
         $(".payment").toggleClass("active")
+        $('#price2').text(price + ".00 CHF")
     });
 
 
+    $("#zuruck5").on("click", function(e){
+        $(".payment").toggleClass("active")
+
+    });
 
 
         $("#btnabbrechen").on("click", function(e){
