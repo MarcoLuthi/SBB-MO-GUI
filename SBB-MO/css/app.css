@@ -361,6 +361,17 @@ strong{
 }
 
 
+.leftdetailanimation4{
+  -webkit-transition: all 1.5s ease;
+  -webkit-transform: translate3d(-105%, 0, 0);
+  -webkit-transition-delay: 0.8s;
+
+}
+
+.leftdetailanimation4.active{
+  -webkit-transform: translate3d(0%, 0, 0);
+}
+
 .leftdetailanimation3{
   -webkit-transition: all 1.5s ease;
   -webkit-transform: translate3d(-105%, 0, 0);
@@ -406,6 +417,18 @@ strong{
   -webkit-transform: translate3d(0%, 0, 0);
 }
 
+.rightdetailanimation2{
+  -webkit-transition: all 1.5s ease;
+  -webkit-transform: translate3d(105%, 0, 0);
+  -webkit-transition-delay: 0.8s;
+
+}
+
+.rightdetailanimation2.active{
+  -webkit-transform: translate3d(0%, 0, 0);
+}
+
+
 
 .downdetailanimation{
   -webkit-transition: all 1.5s ease;
@@ -421,6 +444,12 @@ strong{
 
 
 #rightdetail {
+  margin-left: 55%;
+  width: 45%;
+  height: 90%;
+}
+
+#rightdetail2 {
   margin-left: 55%;
   width: 45%;
   height: 90%;
@@ -459,6 +488,30 @@ strong{
    left: 100px;
 }
 
+
+.tabs4 {
+
+  -webkit-transition: all 0.5s ease;
+}
+
+.tabs4.active{
+    -webkit-transition: all 0.5s ease;
+   -webkit-transform: translate3d(-15%, 0, 0);
+   left: 100px;
+}
+
+.tabs5 {
+
+  -webkit-transition: all 0.5s ease;
+}
+
+.tabs5.active{
+    -webkit-transition: all 0.5s ease;
+   -webkit-transform: translate3d(-15%, 0, 0);
+   left: 100px;
+}
+
+
 #tab1{
 
   position: absolute; top:80px;left:5%;
@@ -490,7 +543,42 @@ strong{
   height:90px;
 }
 
+#tab4{
+ position: absolute; top:200px;left:5%;
+  box-shadow: 3px 3px 5px 2px #707070;
+  background: #566373;
+  color: #fff;
+  width: 90%;
+  padding: 20px;
+  height:90px;
+}
+
+#tab5{
+ position: absolute; top:320px;left:5%;
+  box-shadow: 3px 3px 5px 2px #707070;
+  background: #566373;
+  color: #fff;
+  width: 90%;
+  padding: 20px;
+  height:90px;
+}
+
+
+
 #bezahlen {
+  position: absolute; left:5%;
+  box-shadow: 3px 3px 5px 2px #707070;
+  background: #566373;
+  color: #fff;
+  padding: 20px;
+  padding-bottom: 10px;
+  padding-top: 30px;
+  width: 90%;
+  height: 150px;
+  top: 440px;
+}
+
+#bezahlen2 {
   position: absolute; left:5%;
   box-shadow: 3px 3px 5px 2px #707070;
   background: #566373;
@@ -689,6 +777,23 @@ input.radioinput:checked + .btnradio
 .bezahlenoverlay.active{
   opacity: 0.9;
   z-index: 9000;
+
+}
+
+.payment{
+    position: absolute;
+ 
+  z-index: -1;
+  width:100%;
+  height:100%;
+  background: black;
+  opacity: 0;
+  -webkit-transition: all .4s;
+}
+
+.payment.active{
+  opacity: 0.9;
+  z-index: 8000;
 
 }
 

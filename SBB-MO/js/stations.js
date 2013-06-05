@@ -132,7 +132,7 @@ function getDate()
                         $(".fadein").toggleClass("active")
                         $(".downdetailanimation").toggleClass("active")
                         $(".leftdetailanimation").toggleClass("active")
-                        $(".rightdetailanimation").toggleClass("active")
+                        $(".rightdetailanimation").addClass("active")
                     });
                 });
 
@@ -237,6 +237,9 @@ $(document).ready(function() {
 
 
     });
+
+
+
 
         $("#2klasse").on("click", function(e){
             classp=1;    
@@ -583,6 +586,9 @@ $('#klasseinfo').text(klasse+" - "+fullcount+"x ganze - "+halfcount+"x halbe");
                         $('#viainfo').text("Aarau");
     });
 
+   $("#bezahlen").on("click", function(e){
+        $(".payment").toggleClass("active")
+    });
 
 
 
@@ -594,22 +600,58 @@ $('#klasseinfo').text(klasse+" - "+fullcount+"x ganze - "+halfcount+"x halbe");
         $(".leftdetailanimation").removeClass("active")
         $(".leftdetailanimation2").removeClass("active")
         $(".leftdetailanimation3").removeClass("active")
-        $(".rightdetailanimation").toggleClass("active")
-        $(".downdetailanimation").toggleClass("active")
+        $(".rightdetailanimation").removeClass("active")
+        $(".downdetailanimation").removeClass("active")
+        $(".leftdetailanimation4").removeClass("active") 
+        $(".rightdetailanimation2").removeClass("active")
         $(".tabs").removeClass("active")
         $(".tabs2").removeClass("active")
         $(".tabs3").removeClass("active")
         setTimeout(function(){    
         $(".leftanimation").toggleClass("hide") //toggleClass
         $(".rightanimation").toggleClass("hide") //toggleClass
+
+
            }, 800);
 
     });
 
-
+    $("#zuruck3").on("click", function(e){
+        $(".tastatur").toggleClass("active")
+    });
 
         $("#zuruck2").on("click", function(e){
         $(".tastatur").toggleClass("active") //toggleClass
+
+                    fromhere = $("#fromhere").val();
+             tohere=$("#tohere").val();
+            $('#via').val("Olten - Bern");
+          now = moment().format('L');
+            $('#date').text(now);
+
+             klasse="2. Klasse"
+            $('#klasseinfo').text(klasse+" - "+fullcount+"x ganze - "+halfcount+"x halbe");
+             weg="Nur Hinweg"
+            $('#weg').text(weg);
+
+            $("#fromhere2").val(fromhere);
+            $("#tohere2").val(tohere);
+            $('#price').text(price);
+            $('#update').text(fromhere +" - "+tohere);
+
+             price= 38.00;
+            $('#price').text(price + ".00 CHF");
+
+        $(".leftanimation").toggleClass("hide") //toggleClass
+        $(".rightanimation").toggleClass("hide") //toggleClass
+        $(".fadein").toggleClass("active") //toggleClass
+        $(".leftdetailanimation").toggleClass("active")
+        $(".rightdetailanimation").toggleClass("active")
+
+        $(".downdetailanimation").toggleClass("active")
+        $(".tabs").addClass("active")
+
+
     });
            $("#btnsuchen").on("click", function(e){
             
@@ -644,7 +686,22 @@ $('#klasseinfo').text(klasse+" - "+fullcount+"x ganze - "+halfcount+"x halbe");
 
     });
 
-   
+$("#btnvelo").on("click", function(e){
+        $(".rightdetailanimation2").toggleClass("active")
+        $(".tabs4").removeClass("active")
+        $(".tabs5").removeClass("active")
+        $(".leftdetailanimation4").toggleClass("active") 
+        $(".fadein").toggleClass("active") 
+        $(".leftanimation").toggleClass("hide") //toggleClass
+        $(".rightanimation").toggleClass("hide") //toggleClass
+        $(".tabs4").addClass("active")
+        $(".downdetailanimation").toggleClass("active")
+     });
+
+
+
+
+
         $("#tohere").keyup(function () {
          value = $(this).val();
         $("p").text(value);

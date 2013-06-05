@@ -28,7 +28,7 @@
 </head>
 <body onload="startTime()">
   <div id="app-container">
-    
+    <div class="payment"></div>
     <div class="tastatur">
       <div class="nach">Nach: </div><p class="nachinput" id="nachoutput"></p>
       <button id="zuruck2" class="btninput">Bestätigen</button>
@@ -113,7 +113,7 @@
         <button class="btnmain">Anschlusszone</button>
         <button class="btnmain">Klassenwechsel</button>
         <button class="btnmain">Nachtzuschlag</button>
-        <button class="btnmain">Velobillett</button>
+        <button id="btnvelo" class="btnmain">Velobillett</button>
         <button class="btnmain">Mehrfahrtenkarte</button>
       </div>
 
@@ -311,11 +311,37 @@
       </div>
     </div>
 
+        <div id="leftdetail" class="leftdetailanimation4">
+      <div class="optionensub">
+
+      </div>
+    </div>
+
 
     
      <!-- Ende -->
 
     user
+  <div id="rightdetail2" class="rightdetailanimation2"> 
+
+        <div class="tabs4"  id="tab4">
+VELO
+        </div>
+
+        <div class="tabs5"  id="tab5">
+Datum
+        </div>
+
+
+<div  id="bezahlen2">
+          <span id="price" class="preis"></span><span class="hint">Betrag einwerfen oder Karte einschieben</span>
+        </div>
+
+
+        
+  </div>
+
+
 
 
 
@@ -331,6 +357,10 @@
         <div class="tabs3"  id="tab3">
           <span class="icondatum"></span> <span class="vonnach">Gültig am: </span><span id="date" class="via">23.4.2013</span>
         </div>
+
+
+
+
         <div  id="bezahlen">
           <span id="price" class="preis"></span><span class="hint">Betrag einwerfen oder Karte einschieben</span>
         </div>
