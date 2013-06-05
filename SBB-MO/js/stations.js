@@ -686,6 +686,24 @@ $('#klasseinfo').text(klasse+" - "+fullcount+"x ganze - "+halfcount+"x halbe");
 
     });
 
+
+(function() {
+
+    var quotes = $(".quotes");
+    var quoteIndex = -1;
+    
+    function showNextQuote() {
+        ++quoteIndex;
+        quotes.eq(quoteIndex % quotes.length)
+            .fadeIn(1000)
+            .delay(500)
+            .fadeOut(2000, showNextQuote);
+    }
+    
+    showNextQuote();
+    
+})();
+
 $("#btnvelo").on("click", function(e){
         $(".rightdetailanimation2").toggleClass("active")
         $(".tabs4").removeClass("active")

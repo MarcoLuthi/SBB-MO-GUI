@@ -867,6 +867,7 @@ input.radioinput:checked + .btninput
   color: black;
 }
 
+.quotes {display: none;}
 
 .radiosprache {
   position: absolute;
