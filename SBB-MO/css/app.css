@@ -600,6 +600,22 @@ strong{
   display: block;
 }
 
+#price2 {
+  font-size: 34pt;
+  font-weight: normal;
+  width: 100%;
+  display: block;
+  margin-left: 400px;
+  margin-top: -45px;
+}
+
+#price3 {
+  font-size: 34pt;
+  font-weight: normal;
+  width: 100%;
+  display: block;
+}
+
 .hint {
   font-size: 12pt;
   font-weight: normal;  
